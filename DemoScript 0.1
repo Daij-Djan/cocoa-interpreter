@@ -1,0 +1,44 @@
+#!/usr/bin/cocoa-interpreter
+
+//check params
+if(args.count != 1) {
+	NSLog(@"This DemoScript need to be given a path to a PNG file thats 512x512 which it turns into an icns file"); 
+	return -1;
+}
+	
+//print all command line args (the args array is automatically set)
+NSArray *testArray = [args copy];
+for(id s in testArray) {
+    NSLog(@"arg: %@",s);
+}
+
+//In 0.1 the args array fails to provide the obligatory param to our file/the program name argv[0] provides the name of the TEMP compiled product ==> not enough
+NSString *prog = [NSString stringWithUTF8String:argv[0]];
+NSLog(@"%@", prog);
+
+//use filemgr
+id attribs =  [[NSFileManager defaultManager] attributesOfItemAtPath:prog error:nil];
+NSDate *modDate = [attribs fileModificationDate];
+
+//run alert
+NSString *title = [NSString stringWithFormat:@"Modification Date of %@", prog];
+NSUInteger ret = NSRunAlertPanel(title, [modDate description], @"OK", nil, nil);
+
+//convert img to icon
+if(args.count) {
+	NSImage *icon = [[NSImage alloc] initWithContentsOfFile:args[0]];
+	NSURL *url = [NSURL fileURLWithPath:[[args[0] stringByAppendingString:@"_ICNS"] stringByAppendingPathExtension:@"icns"]];
+    [[NSFileManager defaultManager] removeItemAtURL:url error:nil];
+    
+    CGImageDestinationRef ref = CGImageDestinationCreateWithURL((__bridge CFURLRef)url, kUTTypeAppleICNS, 4, nil);
+    NSRect r = NSMakeRect(0, 0, 32, 32);
+    CGImageDestinationAddImage(ref, [icon CGImageForProposedRect:&r context:nil hints:nil], nil);
+    r = NSMakeRect(0, 0, 64, 64);
+    CGImageDestinationAddImage(ref, [icon CGImageForProposedRect:&r context:nil hints:nil], nil);
+    r = NSMakeRect(0, 0, 256, 256);
+    CGImageDestinationAddImage(ref, [icon CGImageForProposedRect:&r context:nil hints:nil], nil);
+    r = NSMakeRect(0, 0, 512, 512);
+    CGImageDestinationAddImage(ref, [icon CGImageForProposedRect:&r context:nil hints:nil], nil);
+    CGImageDestinationFinalize(ref);
+    CFRelease(ref);
+}

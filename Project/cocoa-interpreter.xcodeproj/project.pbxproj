@@ -1,0 +1,234 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B4311E6F15A64089003C64E1 /* NSTask+Clang.m in Sources */ = {isa = PBXBuildFile; fileRef = B4311E6E15A64082003C64E1 /* NSTask+Clang.m */; };
+		B45A39B315A50987009A3BFB /* DDChecksum.m in Sources */ = {isa = PBXBuildFile; fileRef = B45A39B215A5086B009A3BFB /* DDChecksum.m */; };
+		B4D3348E15A4E38A0088F5C6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4D3348D15A4E38A0088F5C6 /* Foundation.framework */; };
+		B4D3349115A4E38A0088F5C6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B4D3349015A4E38A0088F5C6 /* main.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B4D3348715A4E38A0088F5C6 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		B4311E6D15A64082003C64E1 /* NSTask+Clang.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSTask+Clang.h"; sourceTree = "<group>"; };
+		B4311E6E15A64082003C64E1 /* NSTask+Clang.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSTask+Clang.m"; sourceTree = "<group>"; };
+		B45A39B115A5086B009A3BFB /* DDChecksum.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDChecksum.h; sourceTree = "<group>"; };
+		B45A39B215A5086B009A3BFB /* DDChecksum.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDChecksum.m; sourceTree = "<group>"; };
+		B4D3348915A4E38A0088F5C6 /* cocoa-interpreter */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "cocoa-interpreter"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B4D3348D15A4E38A0088F5C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		B4D3349015A4E38A0088F5C6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B4D3348615A4E38A0088F5C6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B4D3348E15A4E38A0088F5C6 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B4D3347E15A4E38A0088F5C6 = {
+			isa = PBXGroup;
+			children = (
+				B4D3348F15A4E38A0088F5C6 /* cocoa-interpreter */,
+				B4D3348C15A4E38A0088F5C6 /* Frameworks */,
+				B4D3348A15A4E38A0088F5C6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B4D3348A15A4E38A0088F5C6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B4D3348915A4E38A0088F5C6 /* cocoa-interpreter */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B4D3348C15A4E38A0088F5C6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B4D3348D15A4E38A0088F5C6 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B4D3348F15A4E38A0088F5C6 /* cocoa-interpreter */ = {
+			isa = PBXGroup;
+			children = (
+				B4311E6D15A64082003C64E1 /* NSTask+Clang.h */,
+				B4311E6E15A64082003C64E1 /* NSTask+Clang.m */,
+				B45A39B115A5086B009A3BFB /* DDChecksum.h */,
+				B45A39B215A5086B009A3BFB /* DDChecksum.m */,
+				B4D3349015A4E38A0088F5C6 /* main.m */,
+			);
+			path = "cocoa-interpreter";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B4D3348815A4E38A0088F5C6 /* cocoa-interpreter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B4D3349815A4E38A0088F5C6 /* Build configuration list for PBXNativeTarget "cocoa-interpreter" */;
+			buildPhases = (
+				B4D3348515A4E38A0088F5C6 /* Sources */,
+				B4D3348615A4E38A0088F5C6 /* Frameworks */,
+				B4D3348715A4E38A0088F5C6 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "cocoa-interpreter";
+			productName = "cocoa-interpreter";
+			productReference = B4D3348915A4E38A0088F5C6 /* cocoa-interpreter */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B4D3348015A4E38A0088F5C6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = info.pich;
+			};
+			buildConfigurationList = B4D3348315A4E38A0088F5C6 /* Build configuration list for PBXProject "cocoa-interpreter" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = B4D3347E15A4E38A0088F5C6;
+			productRefGroup = B4D3348A15A4E38A0088F5C6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B4D3348815A4E38A0088F5C6 /* cocoa-interpreter */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B4D3348515A4E38A0088F5C6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B4D3349115A4E38A0088F5C6 /* main.m in Sources */,
+				B45A39B315A50987009A3BFB /* DDChecksum.m in Sources */,
+				B4311E6F15A64089003C64E1 /* NSTask+Clang.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		B4D3349615A4E38A0088F5C6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		B4D3349715A4E38A0088F5C6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		B4D3349915A4E38A0088F5C6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		B4D3349A15A4E38A0088F5C6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B4D3348315A4E38A0088F5C6 /* Build configuration list for PBXProject "cocoa-interpreter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B4D3349615A4E38A0088F5C6 /* Debug */,
+				B4D3349715A4E38A0088F5C6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B4D3349815A4E38A0088F5C6 /* Build configuration list for PBXNativeTarget "cocoa-interpreter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B4D3349915A4E38A0088F5C6 /* Debug */,
+				B4D3349A15A4E38A0088F5C6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B4D3348015A4E38A0088F5C6 /* Project object */;
+}

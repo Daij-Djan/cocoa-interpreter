@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B40E5DED15BEED5C00AF60D7 /* NSString+advancedSplit.m in Sources */ = {isa = PBXBuildFile; fileRef = B40E5DEC15BEED5C00AF60D7 /* NSString+advancedSplit.m */; };
 		B4311E6F15A64089003C64E1 /* NSTask+Clang.m in Sources */ = {isa = PBXBuildFile; fileRef = B4311E6E15A64082003C64E1 /* NSTask+Clang.m */; };
+		B431C45715B33839005DFCF1 /* DDEmbeddedDataReader.m in Sources */ = {isa = PBXBuildFile; fileRef = B431C45615B33839005DFCF1 /* DDEmbeddedDataReader.m */; };
+		B44690A915AA49D000903A5C /* NSTask+ProcessString.m in Sources */ = {isa = PBXBuildFile; fileRef = B44690A815AA49D000903A5C /* NSTask+ProcessString.m */; };
 		B45A39B315A50987009A3BFB /* DDChecksum.m in Sources */ = {isa = PBXBuildFile; fileRef = B45A39B215A5086B009A3BFB /* DDChecksum.m */; };
 		B4D3348E15A4E38A0088F5C6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4D3348D15A4E38A0088F5C6 /* Foundation.framework */; };
 		B4D3349115A4E38A0088F5C6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B4D3349015A4E38A0088F5C6 /* main.m */; };
@@ -26,13 +29,22 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		B40E5DEB15BEED5C00AF60D7 /* NSString+advancedSplit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+advancedSplit.h"; sourceTree = "<group>"; };
+		B40E5DEC15BEED5C00AF60D7 /* NSString+advancedSplit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+advancedSplit.m"; sourceTree = "<group>"; };
 		B4311E6D15A64082003C64E1 /* NSTask+Clang.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSTask+Clang.h"; sourceTree = "<group>"; };
 		B4311E6E15A64082003C64E1 /* NSTask+Clang.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSTask+Clang.m"; sourceTree = "<group>"; };
+		B431C45415B2DEA2005DFCF1 /* DDRunTask.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDRunTask.m; sourceTree = "<group>"; };
+		B431C45515B33839005DFCF1 /* DDEmbeddedDataReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDEmbeddedDataReader.h; sourceTree = "<group>"; };
+		B431C45615B33839005DFCF1 /* DDEmbeddedDataReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDEmbeddedDataReader.m; sourceTree = "<group>"; };
+		B44690A715AA49D000903A5C /* NSTask+ProcessString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTask+ProcessString.h"; sourceTree = "<group>"; };
+		B44690A815AA49D000903A5C /* NSTask+ProcessString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTask+ProcessString.m"; sourceTree = "<group>"; };
 		B45A39B115A5086B009A3BFB /* DDChecksum.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDChecksum.h; sourceTree = "<group>"; };
 		B45A39B215A5086B009A3BFB /* DDChecksum.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDChecksum.m; sourceTree = "<group>"; };
+		B48102DB15AB818600354284 /* defines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = defines.h; sourceTree = "<group>"; };
 		B4D3348915A4E38A0088F5C6 /* cocoa-interpreter */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "cocoa-interpreter"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4D3348D15A4E38A0088F5C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B4D3349015A4E38A0088F5C6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B4D39DCC15FF2EB300281FB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +59,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B40E5DEF15BEF66A00AF60D7 /* Shared Components */ = {
+			isa = PBXGroup;
+			children = (
+				B45A39B115A5086B009A3BFB /* DDChecksum.h */,
+				B45A39B215A5086B009A3BFB /* DDChecksum.m */,
+				B431C45515B33839005DFCF1 /* DDEmbeddedDataReader.h */,
+				B431C45615B33839005DFCF1 /* DDEmbeddedDataReader.m */,
+				B40E5DEB15BEED5C00AF60D7 /* NSString+advancedSplit.h */,
+				B40E5DEC15BEED5C00AF60D7 /* NSString+advancedSplit.m */,
+			);
+			name = "Shared Components";
+			sourceTree = "<group>";
+		};
+		B431C45315B2DE7C005DFCF1 /* Included Source Code */ = {
+			isa = PBXGroup;
+			children = (
+				B431C45415B2DEA2005DFCF1 /* DDRunTask.m */,
+			);
+			name = "Included Source Code";
+			sourceTree = "<group>";
+		};
 		B4D3347E15A4E38A0088F5C6 = {
 			isa = PBXGroup;
 			children = (
@@ -75,11 +108,15 @@
 		B4D3348F15A4E38A0088F5C6 /* cocoa-interpreter */ = {
 			isa = PBXGroup;
 			children = (
+				B40E5DEF15BEF66A00AF60D7 /* Shared Components */,
+				B431C45315B2DE7C005DFCF1 /* Included Source Code */,
+				B44690A715AA49D000903A5C /* NSTask+ProcessString.h */,
+				B44690A815AA49D000903A5C /* NSTask+ProcessString.m */,
 				B4311E6D15A64082003C64E1 /* NSTask+Clang.h */,
 				B4311E6E15A64082003C64E1 /* NSTask+Clang.m */,
-				B45A39B115A5086B009A3BFB /* DDChecksum.h */,
-				B45A39B215A5086B009A3BFB /* DDChecksum.m */,
 				B4D3349015A4E38A0088F5C6 /* main.m */,
+				B48102DB15AB818600354284 /* defines.h */,
+				B4D39DCC15FF2EB300281FB3 /* Info.plist */,
 			);
 			path = "cocoa-interpreter";
 			sourceTree = "<group>";
@@ -138,6 +175,9 @@
 				B4D3349115A4E38A0088F5C6 /* main.m in Sources */,
 				B45A39B315A50987009A3BFB /* DDChecksum.m in Sources */,
 				B4311E6F15A64089003C64E1 /* NSTask+Clang.m in Sources */,
+				B44690A915AA49D000903A5C /* NSTask+ProcessString.m in Sources */,
+				B431C45715B33839005DFCF1 /* DDEmbeddedDataReader.m in Sources */,
+				B40E5DED15BEED5C00AF60D7 /* NSString+advancedSplit.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -196,6 +236,16 @@
 		B4D3349915A4E38A0088F5C6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				OTHER_LDFLAGS = (
+					"-sectcreate",
+					__TEXT,
+					__runTask,
+					"cocoa-interpreter/DDRunTask.m",
+					"-sectcreate",
+					__TEXT,
+					__info_plist,
+					Info.plist,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -203,6 +253,16 @@
 		B4D3349A15A4E38A0088F5C6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				OTHER_LDFLAGS = (
+					"-sectcreate",
+					__TEXT,
+					__runTask,
+					"cocoa-interpreter/DDRunTask.m",
+					"-sectcreate",
+					__TEXT,
+					__info_plist,
+					Info.plist,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

@@ -5,21 +5,11 @@
 //  Created by Dominik Pich on 7/4/12.
 //  Copyright (c) 2012 info.pich. All rights reserved.
 //
-
+#import "defines.h"
 #import <Foundation/Foundation.h>
 #import "DDChecksum.h"
 #import "NSTask+Clang.h"
-
-#define INTERPRETER_ARGS_COUNT 2
-
-#define MAIN_OPEN @"int main(int argc, const char * argv[]) { @autoreleasepool {\n"
-#define IMPORT_COCOA @"#import <Cocoa/Cocoa.h>\n"
-#define MAIN_CLOSE @"\n} return 0; }"
-#define ARGS_OPEN @"\nNSArray *args = [NSArray arrayWithObjects:"
-#define ARGS_CLOSE @"nil];\n"
-#define EMPTY_ARGS @"\nNSArray *args = [NSArray array];"
-
-//---
+#import "NSTASK+ProcessString.h"
 
 //call clang
 int compile(NSMutableString *objC, NSStringEncoding encoding, NSString **file) {
@@ -55,7 +45,19 @@ int compile(NSMutableString *objC, NSStringEncoding encoding, NSString **file) {
 }
 
 //preprare script
-int prepare(NSMutableString *objC, NSStringEncoding encoding, NSString *scriptArgs) {
+int prepare(NSMutableString *objC, NSStringEncoding encoding, int argc, const char * argv[]) {
+    //collect script args
+    NSMutableString *scriptArgs = nil;
+    if(argc>INTERPRETER_ARGS_COUNT) {
+        scriptArgs = [NSMutableString stringWithString:ARGS_OPEN];
+        for(int i = INTERPRETER_ARGS_COUNT; i < argc; i++) {
+            [scriptArgs appendFormat:@"@\"%s\", ", argv[i]];
+        }
+        [scriptArgs appendString:ARGS_CLOSE];
+    }
+    //name
+    NSString *progName = [NSString stringWithFormat:PROGNAME, @(argv[1])];
+    
     //modify script by removing interpreter
     NSRange range = [objC rangeOfString:@"\n"];
     if(range.location == NSNotFound) {
@@ -71,9 +73,17 @@ int prepare(NSMutableString *objC, NSStringEncoding encoding, NSString *scriptAr
         
     //add main body
     [objC insertString:scriptArgs?scriptArgs:EMPTY_ARGS atIndex:0];
+    [objC insertString:progName atIndex:0];
     [objC insertString:MAIN_OPEN atIndex:0];
     [objC insertString:IMPORT_COCOA atIndex:0];
     [objC appendString:MAIN_CLOSE];
+
+    //preprocess it by replacing calls to shell (in backtickes) with calls to RunTask
+    NSInteger replaces = [NSTask processString:objC];
+    if(replaces < 0) {
+        printf("failed to preprocess script");
+        return -4;
+    }
     
     return 0;
 }
@@ -99,16 +109,7 @@ int main(int argc, const char * argv[])
             return -1;
         }
         
-        //collect script args
-        NSMutableString *scriptArgs = nil;
-        if(argc>INTERPRETER_ARGS_COUNT) {
-            scriptArgs = [NSMutableString stringWithString:ARGS_OPEN];
-            for(int i = INTERPRETER_ARGS_COUNT; i < argc; i++) {
-                [scriptArgs appendFormat:@"@\"%s\", ", argv[i]];
-            }
-            [scriptArgs appendString:ARGS_CLOSE];
-        }
-        int res = prepare(objC, encoding, scriptArgs);
+        int res = prepare(objC, encoding, argc, argv);
         if(res!=0) {
             printf("Preparation (adding includes, main method, arguments array) of script failed");
             return res;

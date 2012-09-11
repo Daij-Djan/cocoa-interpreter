@@ -1,28 +1,34 @@
 #!/usr/bin/cocoa-interpreter
 
-//check params
-if(args.count != 1) {
-	NSLog(@"This DemoScript need to be given a path to a PNG file thats 512x512 which it turns into an icns file"); 
-	return -1;
-}
-	
 //print all command line args (the args array is automatically set)
 NSArray *testArray = [args copy];
 for(id s in testArray) {
     NSLog(@"arg: %@",s);
 }
 
-//In 0.1 the args array fails to provide the obligatory param to our file/the program name argv[0] provides the name of the TEMP compiled product ==> not enough
-NSString *prog = [NSString stringWithUTF8String:argv[0]];
-NSLog(@"%@", prog);
+//echo arg0 => the script /path/name
+NSLog(@"SCRIPTPATH: %@", progName);
+
+//call external tools
+NSLog(@"LS OUTPUT OF ~: %@", `@"ls", @"-l", @"~"`);
+NSString *progDir = `@"dirname", progName`;
+NSLog(@"SCRIPTDIR using dirname: %@", progDir);
+//LS WITH SCRIPTPATH
+NSLog(`@"ls", @"-l", progName`);
 
 //use filemgr
-id attribs =  [[NSFileManager defaultManager] attributesOfItemAtPath:prog error:nil];
+id attribs =  [[NSFileManager defaultManager] attributesOfItemAtPath:progName error:nil];
 NSDate *modDate = [attribs fileModificationDate];
 
 //run alert
-NSString *title = [NSString stringWithFormat:@"Modification Date of %@", prog];
+NSString *title = [NSString stringWithFormat:@"Modification Date of %@", progName];
 NSUInteger ret = NSRunAlertPanel(title, [modDate description], @"OK", nil, nil);
+
+//check params
+if(args.count != 1) {
+	NSLog(@"This DemoScript need to be given a path to a PNG file thats 512x512 which it turns into an icns file"); 
+	return -1;
+}
 
 //convert img to icon
 if(args.count) {

@@ -5,7 +5,7 @@ cocoa-interpreter allows you to use objective C as a shell scripting language.
 
 so you can write scripts like the included DemoScript that dont need an include of cocoa, a main function or an autoreleasepool (thanks to ARC you dont need to worry about retsin/release for cocoa objects):
 	
-	#!/usr/bin/cocoa-interpreter
+	#!cocoa-interpreter
 	
     //check params
     if(args.count != 1) {
@@ -33,3 +33,13 @@ so you can write scripts like the included DemoScript that dont need an include 
 
 ##installation and usage
 	    
+The included installer package (under Downloads) will copy the 64bit executable of cocoa-interpretr to _/usr/bin/_ so that in shell scripts we can reference it as a shell interpreter. IF you move it to a different path, you have to specify that path in your script. e.g.:
+ 
+	#!/usr/local/bin/cocoa-interpreter
+	
+Alternatively you can also invoke it and pass it a path TO a script
+
+	~:: cocoa-interpreter <PATH_TO_FILE>
+
+##license
+the code is available under the MIT license
